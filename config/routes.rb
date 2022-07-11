@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'lists/new'
-  get 'lists/index'
-  get 'lists/show'
-  get 'lists/edit'
+
   get 'books/top'
   get "/" => "homes#top"
   resources :lists
