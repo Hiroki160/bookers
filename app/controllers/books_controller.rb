@@ -2,18 +2,21 @@ class BooksController < ApplicationController
   def top
   end
     def new
-    @book = Booker.new
-    @books = Booker.all
-  end
+    end
 
   def create
-    book = Booker.new(book_params)
-    book.save
-    redirect_to "/books/new"
+    @book = Booker.new(book_params)
+    @books = Booker.all
+    if @book.save
+      redirect_to books_path
+    else
+      render :index
+    end
   end
 
   def index
     @books = Booker.all
+     @book = Booker.new
   end
 
   def show
@@ -25,15 +28,17 @@ class BooksController < ApplicationController
   end
 
   def update
-    book = Booker.find(params[:id])
-    book.update(book_params)
-    redirect_to new_book_path
+    @book = Booker.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path
+    else render :edit
+    end
   end
 
   def destroy
     book = Booker.find(params[:id])
     book.destroy
-    redirect_to new_book_path
+    redirect_to books_path
   end
 
   private
