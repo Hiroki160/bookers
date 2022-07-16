@@ -26,8 +26,8 @@
       <li><%= message %></li>
     <% end %>
   </ul>
-  <% end %>
-
+  <% end 
+    
 <%= form_with model: @book, url: "/books", method: :post do |f| %>
 <h4>title</h4>
   <%= f.text_field :title %>

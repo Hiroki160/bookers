@@ -7,9 +7,13 @@ class BooksController < ApplicationController
   def create
     @book = Booker.new(book_params)
     @books = Booker.all
+ 
+
     if @book.save
-      redirect_to books_path
+      flash[:notice] = "Book was succesfully created"
+      redirect_to book_path(@book.id)
     else
+      flash.now[:alert] = "Failed to be cretated"
       render :index
     end
   end
