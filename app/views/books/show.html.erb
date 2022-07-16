@@ -1,7 +1,9 @@
 <!--フラッシュメッセージ-->
-<div class="notifications">
- <div class="notice">Book was succesfully created</div>
-</div>
+<% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>">
+      <%= value %>
+    </p>
+<% end %>
 
 <h2>title</h2>
 <p><%= @book.title %></p>

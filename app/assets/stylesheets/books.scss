@@ -1,10 +1,42 @@
-.notifications {
+.alert {
   color: green;
-  text-align: left;  
+  text-align: left;
+}
 
-  .alert {
-    background-color: alert_orange;
-  }
+thead {
+  font-size: 13px;
+}
+
+h4 {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.text-area, .text-field {
+  margin-bottom: 10px;
+}
+
+
+element.style {
+}
+a:visited {
+    color: #666;
+}
+a {
+    color: #000;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 33px;
 }
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.

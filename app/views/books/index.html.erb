@@ -1,12 +1,14 @@
-<div class="notifications">
- <div class="notice">Book was succesfully destroyed</div>
-</div>
+<% flash.each do |key, value| %>
+      <p class="alert alert-<%= key %>">
+      <%= value %>
+    </p>
+<% end %>
 
 <h1>Books</h1>
 <table>
   <thead>
-    <th>title</th>
-    <th>body</th>
+    <th>Title</th>
+    <th>Body</th>
   </thead>
 
   <tbody>
@@ -33,11 +35,11 @@
   <% end %>
 
 <%= form_with model: @book, url: "/books", method: :post do |f| %>
-<h4>title</h4>
-  <%= f.text_field :title %>
+<div>Title</div>
+  <div class= "text-field"><%= f.text_field :title %></div>
 
-<h4>body</h4>
-<%= f.text_area :body %>
+<div class= "body">Body</div>
+  <div class= "text-area"><%= f.text_area :body %></div>
 
 <div><%= f.submit 'Create Book' %></div>
 
